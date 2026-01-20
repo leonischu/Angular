@@ -30,21 +30,36 @@ export class App {
     //   this.name ="hello"
     // }
 
-  name = "Nischal"
-  data:string|number = "hello"
-  other:any = true //any dataType can be used
+  // name = "Nischal"
+  // data:string|number = "hello"
+  // other:any = true //any dataType can be used
 
-    updateName(){
-      this.name ="hello"
-      this.data ="5555"
+  //   updateName(){
+  //     this.name ="hello"
+  //     this.data ="5555"
+  //   }
+
+  //   updateVar(){
+  //     let x = 30; //this is possible inside function only
+  //     console.log(x)
+  //   }
+  //   sum(a:any,b:any){
+  //     console.log(a+b);
+  //   }
+  count = 0
+  handleCount(val:string){
+    if(val == 'minus'){
+      this.count=this.count-1
+    }
+    else if (val=='plus'){
+      this.count = this.count+1
+    }
+    else if(val=='zero'){
+      this.count = 0
+    
     }
 
-    updateVar(){
-      let x = 30; //this is possible inside function only
-      console.log(x)
-    }
-    sum(a:any,b:any){
-      console.log(a+b);
-    }
+
+  }
 
 }
