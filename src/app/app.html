@@ -1,6 +1,11 @@
-<!-- <h2>{{users[0]}}</h2> -->
+<!-- <h1>{{count()}}</h1> -->
+<!-- <button (click)=" count.set(100)" >Increase Value</button>
+<button (click)=" count.set(100)" >Increase Property</button> -->
+<!-- 
+<h1>{{x}}</h1>
 
-@for(item of users; track item){
-    <h2>{{item}}</h2>
+<button (click)="updateValue()" >Update</button>  -->
 
-}
+<button (click)="updateValue('dec')">Decrement</button>
+<h1>{{count()}}</h1>
+<button (click)="updateValue('inc')" >Increment</button>

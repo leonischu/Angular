@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 
@@ -9,7 +9,25 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+count = signal(10)
+x = 20;
+constructor(){
+  effect(()=>{
+    console.log(this.count());
+  })
 
- users = ["Anil","Sam","Peter","Bruce","Tony"]
+}
+
+updateValue(val:string){
+
+  if(val=='inc'){
+  this.count.set(this.count()+1);
+  // this.x= this.x+1;
+  }
+else {
+this.count.set(this.count()-1)
+}
+
+}
  
 }
