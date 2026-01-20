@@ -1,25 +1,13 @@
-<h1>Counter App</h1>
-
-    
-    <div>
-        <button (click)="handleEvent($event)" class="btn" name="login">Event</button>
-       
-    </div>
-    <br>
-    <br>
-    <div
-    (mouseenter) = "handleEvent($event)"
-    style = "background-color: green; width: 100px; height: 100px;" 
-    
-    ></div>
-    <div
-    (mouseleave) = "handleEvent($event)"
-    style = "background-color: blueviolet; width: 100px; height: 100px;" 
-    
-    ></div>
-
-    <br>
-    <br>
-    <input type="text" (input)="handleEvent($event)" (focus)="handleEvent($event)" (blur)="handleEvent($event)" name="=user">
-
-
+<h1>Get and Set Input field Value</h1>
+<h1>User Name is :{{displayName}}</h1>
+<input type="text"(input)=" getName($event)" placeholder="Enter User name" value="{{name}}" id="">
+<br>
+<br>
+<button (click) = "showName()">Get Name</button>
+<button (click) = "setName()">Set Name</button>
+<hr>
+<br>
+<h1>Email:{{email}}</h1>
+<input type="text" value = "{{email}}"placeholder="enter email" #emailField>
+<button (click) = "getEmail(emailField.value)">Get Email</button>
+<button (click) = "setEmail()" >Set Email</button>

@@ -9,15 +9,30 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-
-  handleEvent(event:Event){
-    console.log("Function called",event.type)
-    console.log("value",(event.target as HTMLInputElement).value)
-  //   console.log("button clicked",(event.target as Element).className)
-  //   console.log("button clicked",event)
+ name = ""
+ displayName = "";
+ email = "";
+  getName(event:Event){
+    const name = ((event.target as HTMLInputElement).value);
+    this.name= name;
   }
- 
+  showName(){
+    this.displayName = this.name
+  }
+  setName(){
+    this.name = "Nischal"
+
+  }
+  getEmail(val:string){
+    console.log(val)
+    this.email = val;
+
+  }
+  setEmail(){
+  
+    this.email = "Default@test.com";
+
+  }
 
  
-
 }
