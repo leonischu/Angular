@@ -1,9 +1,6 @@
-@switch(color)
-{
-    @case('red'){
-        <h1 style="background-color: red;">red color</h1>
-    }
-    @case('green'){
-        <h1 style="background-color: green;">green color</h1>
-    }
+<!-- <h2>{{users[0]}}</h2> -->
+
+@for(item of users; track item){
+    <h2>{{item}}</h2>
+
 }

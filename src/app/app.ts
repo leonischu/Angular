@@ -10,6 +10,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
 
- color = 'red'
+ users = ["Anil","Sam","Peter","Bruce","Tony"]
  
 }
