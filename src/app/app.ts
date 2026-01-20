@@ -10,17 +10,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
 
-  display=true;
-  
-  hide(){
-    this.display = false
-  }
- 
-  show(){
-    this.display = true
-  }
-  Toggle(){
-    this.display = !this.display
-  }
+ color = 'red'
  
 }

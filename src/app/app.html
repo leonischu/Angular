@@ -1,14 +1,9 @@
-<h1>if/else</h1>
-@if(display){
-<div style="width: 200px; height: 200px; background-color: green;">
-
-</div>
-}
-
-<button (click) = "hide()" >Hide Div</button>
-<button (click) = "show()" >show Div</button>
-<button (click) = "Toggle()" >Toggle</button>
-
-@else{
-    
+@switch(color)
+{
+    @case('red'){
+        <h1 style="background-color: red;">red color</h1>
+    }
+    @case('green'){
+        <h1 style="background-color: green;">green color</h1>
+    }
 }
