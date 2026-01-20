@@ -1,13 +1,14 @@
-<h1>Get and Set Input field Value</h1>
-<h1>User Name is :{{displayName}}</h1>
-<input type="text"(input)=" getName($event)" placeholder="Enter User name" value="{{name}}" id="">
-<br>
-<br>
-<button (click) = "showName()">Get Name</button>
-<button (click) = "setName()">Set Name</button>
-<hr>
-<br>
-<h1>Email:{{email}}</h1>
-<input type="text" value = "{{email}}"placeholder="enter email" #emailField>
-<button (click) = "getEmail(emailField.value)">Get Email</button>
-<button (click) = "setEmail()" >Set Email</button>
+<h1>if/else</h1>
+@if(display){
+<div style="width: 200px; height: 200px; background-color: green;">
+
+</div>
+}
+
+<button (click) = "hide()" >Hide Div</button>
+<button (click) = "show()" >show Div</button>
+<button (click) = "Toggle()" >Toggle</button>
+
+@else{
+    
+}
