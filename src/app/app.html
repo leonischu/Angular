@@ -1,12 +1,14 @@
 <h1>Reactive Forms</h1>
 
-<form action="" method="post">
-    <input type="text" placeholder="enter Name"[formControl] = "name" >
+<form [formGroup] = "profileForm" (ngSubmit) = "onSubmit()">
+    <input type="text" placeholder="enter Name" formControlName = "name" >
     <br>
     <br>
-    <input type="text" placeholder="enter Password" [formControl] = "password">
+    <input type="text" placeholder="enter Password" formControlName = "password">
     <br><br>
-    <button type="button" (click)="displayValue()">Login</button>
-    <button type="button" (click)="setValues()">Set Values in Fields</button>
+    <input type="text" placeholder="enter email" formControlName= "email">
+    <br><br>
+    <button  >Submit</button>
+ 
    
 </form>

@@ -1,5 +1,5 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 
@@ -12,19 +12,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class App {
 
-  name = new FormControl();
-  password = new FormControl();
+  profileForm =new FormGroup({
+    name: new FormControl(),
+    password: new FormControl(),
+    email: new FormControl(),
 
-  displayValue(){
-    console.log(this.name.value,this.password.value);
-    
-  }
-  setValues(){
-
-    this.name.setValue("peter");
-    this.password.setValue('213')
-
-
+  })
+  onSubmit(){
+    console.log(this.profileForm.value);
   }
 
 
