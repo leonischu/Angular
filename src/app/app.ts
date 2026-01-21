@@ -10,12 +10,26 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
 
-// data = signal<number | string>(10);
-data: WritableSignal<number | string> = signal(10);
-// count:Signal<number> = computed(()=>200 ); // define garesi esko value change garna mildaina 
-updateSignal(){
-  this.data.set("hello")
+  x =signal(10);
+  y = signal(20);
+  z = computed(()=>this.x() + this. y()) ;
+  showValue(){
+    console.log(this.z());
+    this.x.set(100) ;
+    console.log(this.z());
+    
+  }
 }
+
+
+
+
+// data = signal<number | string>(10);
+// data: WritableSignal<number | string> = signal(10);
+// count:Signal<number> = computed(()=>200 ); // define garesi esko value change garna mildaina 
+// updateSignal(){
+//   this.data.set("hello")
+
 
 
 
@@ -45,4 +59,4 @@ updateSignal(){
 
 // }
  
-}
+
