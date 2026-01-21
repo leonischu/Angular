@@ -10,19 +10,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+  bgColor = "green"
+  fontSize = "100px"
+  headingSizeBig = "40px"
+  headingSizeSmall = "10px"
 
-  task = "";
-  taskList:{id:number,task:string}[] = [];
-  nextId=1;
-
-  addTask(){
-
-    this.taskList.push({id:  this.nextId++,task:this.task})
-    console.log(this.taskList);
-    
-  }
-  deleteTask(taskId:number){
-   this.taskList =  this.taskList.filter((item) => item.id! == taskId);
+  zoom = false
+  update(){
+    this.zoom = !this.zoom
   }
 
 }
