@@ -2,11 +2,17 @@
 
 <form [formGroup] = "profileForm" (ngSubmit) = "onSubmit()">
     <input type="text" placeholder="enter Name" formControlName = "name" >
+    <span *ngIf="name?.hasError('required')">Name is Required</span>
+    <span *ngIf="name?.invalid &&(name?.dirty || name?.touched)">Enter user name</span>
     <br>
     <br>
     <input type="text" placeholder="enter Password" formControlName = "password">
+     <span *ngIf="password?.hasError('required')">Password is Required</span>
+    <span *ngIf="password?.invalid &&(password?.dirty || password?.touched)">Enter user password</span>
     <br><br>
     <input type="text" placeholder="enter email" formControlName= "email">
+     <span *ngIf="email?.hasError('required')">email is Required</span>
+    <span *ngIf="email?.invalid &&(email?.dirty || email?.touched)">Enter user email</span>
     <br><br>
     <button  >Submit</button>
  
