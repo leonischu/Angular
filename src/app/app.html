@@ -2,20 +2,36 @@
 
 <form #userForm = "ngForm" (ngSubmit) = "addDetails(userForm.value)">
 
-    <input type="text" name="name" placeholder="enter name" ngModel>
+    <input type="text" #name = "ngModel" required name="name" placeholder="enter name" ngModel>
+    <span *ngIf="name.invalid && name.touched">Name is Required</span>
     <br><br>
-    <input type="password" name="password" placeholder="enter password" ngModel>
+    <input type="password" required minlength="5" #password = "ngModel" name="password" placeholder="enter password" ngModel>
+        <span *ngIf="password.invalid && password.touched">Enter valid Passowrd</span>
+
     <br><br>
-    <select name="gender" ngModel>
+    <input type="email" required  email #email= "ngModel" name="email" placeholder="enter email" ngModel>
+        <span *ngIf="email.invalid && email.touched">Enter valid email</span>
+
+    <br><br>
+
+    <input type="text" required  pattern="[a-zA-Z0-9\s]+" #address= "ngModel" name="address" placeholder="enter address" ngModel>
+        <span *ngIf="address.invalid && address.touched">Enter valid address</span>
+
+    <br><br>
+
+
+
+    <select #gender="ngModel" required name="gender" ngModel>
         <option value="">Select Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
     </select>
+           <span *ngIf="gender.invalid && gender.touched">Select your gender</span>
     <br><br>
 <input type="range" min="0" max="20" name="range" ngModel>
 <br><br>
 
-<button>Add User</button>
+<button [disabled]="userForm.invalid">Add User</button>
 
 </form>
 <h3>{{userDetails.name}}</h3>
