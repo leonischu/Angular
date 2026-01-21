@@ -9,14 +9,30 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class Home {
 
-
-  constructor(private router:Router){
-    
-  }
-
-  // goToProfile(name:string){
-  //   this.router.navigate(['profile'],{queryParams:{name}})
-
-  // }
-
+  users = [
+    {
+      id:'1',
+      name:'anil',
+      age:28,
+      email:'anil@test.com'
+    },
+    {
+      id:'2',
+      name:'peter',
+      age:30,
+      email:'peter@test.com'
+    },
+    {
+      id:'3',
+      name:'sam',
+      age:23,
+      email:'sam@test.com'
+    },
+    {
+      id:'4',
+      name:'bruce',
+      age:25,
+      email:'bruce@test.com'
+    },
+  ]
 }
