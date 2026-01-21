@@ -1,30 +1,34 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
 
-  users = [
-  "Aarav",
-  "Sita",
-  "Rahul",
-  "Priya",
-  "Anita",
-  "Rohan",
-  "Kiran",
-  "Pooja",
-  "Sanjay",
-  "Nischal"
-];
- 
+name = ""
 
 }
+
+
+//   users = [
+//   "Aarav",
+//   "Sita",
+//   "Rahul",
+//   "Priya",
+//   "Anita",
+//   "Rohan",
+//   "Kiran",
+//   "Pooja",
+//   "Sanjay",
+//   "Nischal"
+// ];
+ 
 
 
 
