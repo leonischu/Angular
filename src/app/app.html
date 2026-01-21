@@ -15,10 +15,32 @@
 <button (click) = "updateSignal()">Update</button> -->
 <!-- <h1>{{z()}}</h1>
 <button  (click) = "showValue()">Show Value</button> -->
-<h1>{{userName()}}</h1>
+<!-- <h1>{{userName()}}</h1>
 <h1>hello</h1>
 <button (click)="togglevalue()">Update</button>
 <h1>{{count()}}</h1>
 @if(displayHeading){
     <h1>page Heading</h1>
+} -->
+
+@for(user of users; track user)
+{
+
+    <!-- @if($first || $last){
+        <h3 style = "background-color: red;">this is our {{$index+1}} user and name is {{user}}</h3>
+
+    }
+    @else{
+    <h3>this is our {{$index+1}} user and name is {{user}}</h3>
+       } -->
+     
+       @if($odd){
+        <h3 style="background-color: aqua;"> this is our{{$index}} user and name is {{user}}</h3>
+       }
+
+
+
+}
+@empty(){
+    <h1>NO record found</h1>
 }
