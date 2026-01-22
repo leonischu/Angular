@@ -1,12 +1,9 @@
 
 <h1>This is parent component</h1>
 
-<app-user [user] = "userName"></app-user>
-<select #selectedUser (change)="onUserChange(selectedUser.value)">
-<option value="Anil">Anil</option>
-<option value="Sam">Sam</option>
-<option value="Peter">Peter</option>
-<option value="Tony">Tony</option>
-
-
-</select>
+@for(user of users; track user){
+    <div>
+        <!-- {{user}} -->
+         <app-user [user]="user"></app-user>
+    </div>
+}

@@ -14,11 +14,18 @@ import { User } from './user/user';
 })
 export class App {
 
-userName = "Bruce"
-onUserChange(user:string){
-  this.userName = user;
-}
-
+users =  [
+  "Aarav",
+  "Sita",
+  "Rahul",
+  "Priya",
+  "Anita",
+  "Rohan",
+  "Kiran",
+  "Pooja",
+  "Sanjay",
+  "Nischal"
+];
 
 }
 
