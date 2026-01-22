@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { App } from '../app';
 
 @Component({
   selector: 'app-user',
@@ -7,5 +8,24 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.css',
 })
 export class User {
-@Input() user:string = '';
+
+ @Output() getUsers = new EventEmitter();
+
+users =  [
+  "Aarav",
+  "Sita",
+  "Rahul",
+  "Priya",
+  "Anita",
+  "Rohan",
+  "Kiran",
+  "Pooja",
+  "Sanjay",
+  "Nischal"
+];
+
+ngOnInit(){
+  this.getUsers.emit(this.users);
+}
+
 }

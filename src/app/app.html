@@ -1,9 +1,15 @@
+<h1>parent component</h1>
 
-<h1>This is parent component</h1>
+
+
+
+
+     <app-user (getUsers) = "handleUsers($event)" ></app-user>
 
 @for(user of users; track user){
     <div>
         <!-- {{user}} -->
-         <app-user [user]="user"></app-user>
+         <h2>Username is :{{user}}</h2>
+    
     </div>
 }

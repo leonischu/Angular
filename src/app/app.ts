@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, Input, Signal, signal, WritableSignal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { User } from './user/user';
@@ -13,19 +13,11 @@ import { User } from './user/user';
   styleUrl: './app.css'
 })
 export class App {
-
-users =  [
-  "Aarav",
-  "Sita",
-  "Rahul",
-  "Priya",
-  "Anita",
-  "Rohan",
-  "Kiran",
-  "Pooja",
-  "Sanjay",
-  "Nischal"
-];
+  users:undefined|string[];
+ handleUsers(users:string[]){
+  console.log(users);
+  this.users = users
+ }
 
 }
 
