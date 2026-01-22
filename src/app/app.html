@@ -1,40 +1,12 @@
-<h1>Template driven forms</h1>
 
-<form #userForm = "ngForm" (ngSubmit) = "addDetails(userForm.value)">
+<h1>This is parent component</h1>
 
-    <input type="text" #name = "ngModel" required name="name" placeholder="enter name" ngModel>
-    <span *ngIf="name.invalid && name.touched">Name is Required</span>
-    <br><br>
-    <input type="password" required minlength="5" #password = "ngModel" name="password" placeholder="enter password" ngModel>
-        <span *ngIf="password.invalid && password.touched">Enter valid Passowrd</span>
-
-    <br><br>
-    <input type="email" required  email #email= "ngModel" name="email" placeholder="enter email" ngModel>
-        <span *ngIf="email.invalid && email.touched">Enter valid email</span>
-
-    <br><br>
-
-    <input type="text" required  pattern="[a-zA-Z0-9\s]+" #address= "ngModel" name="address" placeholder="enter address" ngModel>
-        <span *ngIf="address.invalid && address.touched">Enter valid address</span>
-
-    <br><br>
+<app-user [user] = "userName"></app-user>
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+<option value="Anil">Anil</option>
+<option value="Sam">Sam</option>
+<option value="Peter">Peter</option>
+<option value="Tony">Tony</option>
 
 
-
-    <select #gender="ngModel" required name="gender" ngModel>
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
-           <span *ngIf="gender.invalid && gender.touched">Select your gender</span>
-    <br><br>
-<input type="range" min="0" max="20" name="range" ngModel>
-<br><br>
-
-<button [disabled]="userForm.invalid">Add User</button>
-
-</form>
-<h3>{{userDetails.name}}</h3>
-<h3>{{userDetails.password}}</h3>
-<h3>{{userDetails.gender}}</h3>
-<h3>{{userDetails.range}}</h3>
+</select>
