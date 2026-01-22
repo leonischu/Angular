@@ -1,15 +1,12 @@
-<h1>parent component</h1>
+<h1>Pipes in Angular</h1>
+<h2>{{title}}</h2>
+<h2>{{title | uppercase}}</h2>
+<h2>{{title | titlecase}}</h2>
+<h2>{{name | lowercase}}</h2>
+<h2>{{date | date}}</h2>
+<h2>{{date | date:'fullDate'}}</h2>
+<h2>{{date | date:'hh:mm:ss'}}</h2>
 
-
-
-
-
-     <app-user (getUsers) = "handleUsers($event)" ></app-user>
-
-@for(user of users; track user){
-    <div>
-        <!-- {{user}} -->
-         <h2>Username is :{{user}}</h2>
-    
-    </div>
-}
+<h2>{{amount | currency}}</h2>
+<h2>{{amount | currency:'EUR'}}</h2>
+<h2>{{amount | currency:'NPR'}}</h2>
