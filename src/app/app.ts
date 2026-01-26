@@ -11,7 +11,7 @@ import { User } from './interfaces/User';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -22,11 +22,25 @@ userList:User[]=[];
   constructor(private userService:UsersService){}
 
   ngOnInit(){
+    this.getUser();
+  
+  }
+getUser(){
     this.userService.getUsers().subscribe((data:User[]) => {
       console.log(data);
       this.userList= data;
       
     })
+}
+
+  addUser(user:User){
+    this.userService.saveUsers(user).subscribe((data:User)=>{
+      if(data){
+        this.getUser();
+      }
+    
+    })
+    
   }
 
 

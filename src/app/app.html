@@ -1,3 +1,23 @@
+
+
+<form #userForm="ngForm" (ngSubmit) = "addUser(userForm.value)" >
+
+    <input type="text" placeholder="enter name" name="name" ngModel>
+    <br><br>
+    
+    <input type="text" placeholder="enter email" name="email" ngModel>
+    <br><br>
+    <input type="text" placeholder="enter address" name="address" ngModel>
+    <br><br>
+    <input type="text" placeholder="" name="phoneNumber" ngModel>
+    <br><br>
+    <button>Add User</button>
+
+
+
+</form>
+
+
 @for(user of userList;track user.id){
     <ul>
         <li>{{user.name}}</li>
@@ -6,3 +26,4 @@
         <li>{{user.phoneNumber}}</li>
     </ul>
 }
+
