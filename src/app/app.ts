@@ -17,11 +17,12 @@ import { Product } from './services/product';
 export class App {
 
 
-  productData:{
-    name: string;
-    branch: string;
-    price: string;
-}[] | undefined
+//   productData:{
+//     name: string;
+//     branch: string;
+//     price: string;
+// }[] | undefined
+productList:any;
 
   constructor(private productService:Product){
    
@@ -29,10 +30,17 @@ export class App {
     
   }
 
-getProductData(){
- this.productData= this.productService.getProductData();
- console.log(this.productData);
+// getProductData(){
+//  this.productData= this.productService.getProductData();
+//  console.log(this.productData);
  
+// }
+ngOnInit(){
+  this.productService.getProductList().subscribe((data:any)=>{
+    console.log(data);
+    this.productList=data.products;
+    
+  })
 }
   
 

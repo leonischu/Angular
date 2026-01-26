@@ -1,6 +1,9 @@
-<button (click)="getProductData()">GetData</button>
-@for(item of productData; track item){
-    <h1>
-        {{item.name}},{{item.branch}},{{item.price}}
-    </h1>
+@for(product of productList; track product.id){
+    <ul>
+        
+          <li>  {{product.title}}</li>
+           <li> {{product.price}}</li>
+           <li> {{product.category}}</li>
+        
+    </ul>
 }
