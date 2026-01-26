@@ -1,12 +1,6 @@
-<h1>Pipes in Angular</h1>
-<h2>{{title}}</h2>
-<h2>{{title | uppercase}}</h2>
-<h2>{{title | titlecase}}</h2>
-<h2>{{name | lowercase}}</h2>
-<h2>{{date | date}}</h2>
-<h2>{{date | date:'fullDate'}}</h2>
-<h2>{{date | date:'hh:mm:ss'}}</h2>
+<h1>Life Cycle Methods in Angular</h1>
 
-<h2>{{amount | currency}}</h2>
-<h2>{{amount | currency:'EUR'}}</h2>
-<h2>{{amount | currency:'NPR'}}</h2>
+<button (click) ="onUpdate()">Count:{{counter}}</button>
+<div *ngIf ="counter!= 5"  >
+<app-user [counter]="counter" #user></app-user>
+</div>
