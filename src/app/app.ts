@@ -4,6 +4,7 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 import { UsersService } from './service/users-service';
+import { User } from './interfaces/User';
 
 
 
@@ -16,12 +17,12 @@ import { UsersService } from './service/users-service';
 })
 export class App {
 
-userList:any;
+userList:User[]=[];
 
   constructor(private userService:UsersService){}
 
   ngOnInit(){
-    this.userService.getUsers().subscribe((data:any) => {
+    this.userService.getUsers().subscribe((data:User[]) => {
       console.log(data);
       this.userList= data;
       
