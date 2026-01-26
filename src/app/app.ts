@@ -2,47 +2,31 @@ import { CommonModule,NgIf,UpperCasePipe } from '@angular/common';
 import { Component, computed, effect, Input, Signal,afterEveryRender, signal, ViewChild, WritableSignal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { User } from './user/user';
-import { Product } from './services/product';
+
+import { UsersService } from './service/users-service';
 
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [User,NgIf],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
 
+userList:any;
 
-//   productData:{
-//     name: string;
-//     branch: string;
-//     price: string;
-// }[] | undefined
-productList:any;
+  constructor(private userService:UsersService){}
 
-  constructor(private productService:Product){
-   
-
-    
+  ngOnInit(){
+    this.userService.getUsers().subscribe((data:any) => {
+      console.log(data);
+      this.userList= data;
+      
+    })
   }
-
-// getProductData(){
-//  this.productData= this.productService.getProductData();
-//  console.log(this.productData);
- 
-// }
-ngOnInit(){
-  this.productService.getProductList().subscribe((data:any)=>{
-    console.log(data);
-    this.productList=data.products;
-    
-  })
-}
-  
 
 
 }
