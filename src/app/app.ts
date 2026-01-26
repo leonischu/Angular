@@ -36,17 +36,24 @@ getUser(){
 
   addUser(user:User){
 
-    if(!this.selectUser){
-    this.userService.saveUsers(user).subscribe((data:User)=>{
-      // if(data){
+    if(!this.selectedUser){
+      this.userService.saveUsers(user).subscribe((data:User)=>{
+      console.log(data);
+      if(data){
         this.getUser();
-      // }
+      }
     
     })
-     }
-     else{
-      console.log(user)
-     }
+    } else{
+      const userData ={...user,id:this.selectedUser.id}
+      this.userService.updateUser(userData).subscribe((data)=>{
+        if(data){
+          this.getUser();
+        }
+      })
+
+    }
+    
     
   }
   deleteUser(id:string){

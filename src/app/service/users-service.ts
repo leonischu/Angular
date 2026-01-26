@@ -29,5 +29,11 @@ export class UsersService {
     const url ="https://localhost:7012/api/Student";
        return this.http.get<User>(url +"/"+id)
   }
+    updateUser(user:User):Observable<User>{
+      
+    const url ="https://localhost:7012/api/Student";
+
+       return this.http.put<User>(url +"/"+user.id,user)
+  }
   
 }
