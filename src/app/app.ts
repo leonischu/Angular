@@ -35,13 +35,25 @@ getUser(){
 
   addUser(user:User){
     this.userService.saveUsers(user).subscribe((data:User)=>{
-      if(data){
+      // if(data){
         this.getUser();
-      }
+      // }
     
     })
     
   }
+  deleteUser(id:string){
+    this.userService.deleteUser(id).subscribe((data:User)=>{
+
+      //page  refresh garianu pardaina
+      //  if(data){
+        this.getUser();
+    // }
+
+    }
+
+
+  )}
 
 
 }

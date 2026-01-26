@@ -17,5 +17,11 @@ export class UsersService {
     const url ="https://localhost:7012/api/Student";
     return this.http.post<User>(url,user);
   }
+  deleteUser(id:string):Observable<User>{
+      
+    
+    const url ="https://localhost:7012/api/Student";
+       return this.http.delete<User>(url +"/"+id)
+  }
   
 }
