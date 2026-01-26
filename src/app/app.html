@@ -2,17 +2,28 @@
 
 <form #userForm="ngForm" (ngSubmit) = "addUser(userForm.value)" >
 
-    <input type="text" placeholder="enter name" name="name" ngModel>
+    <input type="text" placeholder="enter name" name="name" ngModel [ngModel]="selectedUser?.name">
     <br><br>
     
-    <input type="text" placeholder="enter email" name="email" ngModel>
+    <input type="text" placeholder="enter email" name="email" [ngModel]="selectedUser?.email">
     <br><br>
-    <input type="text" placeholder="enter address" name="address" ngModel>
+    <input type="text" placeholder="enter address" name="address" [ngModel]="selectedUser?.address">
     <br><br>
-    <input type="text" placeholder="" name="phoneNumber" ngModel>
+    <input type="text" placeholder="" name="phoneNumber" [ngModel]="selectedUser?.phoneNumber">
     <br><br>
-    <button>Add User</button>
+    @if(!selectedUser){
+           <button>Add User</button>
 
+    }
+    @else{
+           <button>Update User</button>
+
+    }
+
+
+
+
+ 
 
 
 </form>
@@ -25,6 +36,7 @@
         <li>{{user.address}}</li>
         <li>{{user.phoneNumber}}</li>
         <li><Button (click)="deleteUser(user.id)">Delete</Button></li>
+        <li><Button (click)="selectUser(user.id)">Update</Button></li>
     </ul>
 }
 

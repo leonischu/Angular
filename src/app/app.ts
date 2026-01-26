@@ -18,6 +18,7 @@ import { User } from './interfaces/User';
 export class App {
 
 userList:User[]=[];
+selectedUser:User | undefined;
 
   constructor(private userService:UsersService){}
 
@@ -34,12 +35,18 @@ getUser(){
 }
 
   addUser(user:User){
+
+    if(!this.selectUser){
     this.userService.saveUsers(user).subscribe((data:User)=>{
       // if(data){
         this.getUser();
       // }
     
     })
+     }
+     else{
+      console.log(user)
+     }
     
   }
   deleteUser(id:string){
@@ -51,9 +58,17 @@ getUser(){
     // }
 
     }
-
-
   )}
+
+  selectUser(id:string){
+    this.userService.selectUser(id).subscribe((data:User) => {
+    console.log(data)
+    
+      this.selectedUser = data;
+    
+    })
+    
+  }
 
 
 }
