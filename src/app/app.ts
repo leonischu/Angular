@@ -3,6 +3,7 @@ import { Component, computed, effect, Input, Signal,afterEveryRender, signal, Vi
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { User } from './user/user';
+import { Product } from './services/product';
 
 
 
@@ -14,21 +15,25 @@ import { User } from './user/user';
   styleUrl: './app.css'
 })
 export class App {
-  @ViewChild('user') User:any
 
-  counter = 0;
 
-  constructor(){
-    afterEveryRender(()=>{
-      console.log("After render",this.User.counter);
+  productData:{
+    name: string;
+    branch: string;
+    price: string;
+}[] | undefined
 
-    })
+  constructor(private productService:Product){
+   
+
+    
   }
 
-  onUpdate(){
-    this.counter++;
-
-  }
+getProductData(){
+ this.productData= this.productService.getProductData();
+ console.log(this.productData);
+ 
+}
   
 
 
